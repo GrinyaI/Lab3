@@ -9,14 +9,18 @@ def index():
 
 @app.route('/', methods=['post', 'get'])
 def form():
-    data = {'login': 'password'}
+    data = {}
     au = ''
+    with open('Bd.txt') as file:
+        for line in file:
+            key, *value = line.split()
+            data[key] = value
+    print(data)
     if request.method == 'POST':
         log = str(request.form.get('login').strip())
         pas = str(request.form.get('password').strip())
         if data.get(log):
-            pa = data[log]
-            if pa==pas:
+            if data[log][0]==pas:
                 au = 'Авторизация выполнена успешно'
             else:
                 au = 'Пароль введён неверно'
