@@ -1,8 +1,0 @@
-return render_template('index.html', h1=Auth)
-else
-return render_template('index.html', h1=NotAuth)
-dictionary = {
-'login': password
-}
-тесктовый файл
-эксель таблица
