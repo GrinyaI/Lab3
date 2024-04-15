@@ -6,7 +6,7 @@ app = Flask(__name__)
 def index():
     return render_template("index.html")
 
-@app.route('/authorization', methods=['post', 'get'])
+@app.route('/authorization', methods=['post'])
 def authoriz():
     data = {}
     au = ''
@@ -26,7 +26,7 @@ def authoriz():
             au = 'Логин отсутствует/введён неверно'
     return render_template('authorization.html', ath=au)
 
-@app.route('/registration', methods=['post', 'get'])
+@app.route('/registration', methods=['post'])
 def registr():
     data = {}
     reg = ''
